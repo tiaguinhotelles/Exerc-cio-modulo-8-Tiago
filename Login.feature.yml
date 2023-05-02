@@ -1,0 +1,37 @@
+#language: pt
+
+Funcionalidade: Login na plataforma 
+Como cliente da EBAC-SHOP
+Quero fazer o login (autenticação) na plataforma  
+Para visualizar meus pedidos
+
+Cenario: Autenticação Válida
+Dado que eu acesse a página da plataforma
+Quando eu digitar o usuário "felipe@ebac.com.br"
+
+E a senha "senha@123"
+Entao deve exibir uma mensagem de boas vindas "Olá Felipe"
+
+Cenário: Usuario Inexistente
+Dado que eu acesse a página da plataforma
+Quando eu digitar o usuário "jorge@gmail.com.br"
+E a senha "senha@@12"
+Entao deve exibir uma mensagem de alerta "Usuário inexistente"
+
+Cenário: Usuario com senha invalida 
+Dado que eu acesse a página da plataforma
+Quando eu digitar o usuário "felipe@ebac.com.br"
+E a senha "senha@124"
+Entao deve exibir uma mensagem de alerta "Usuário ou senha invalidos"
+
+Cenário: Autenticar multiplos usuários
+Quando eu digitar o <usuario>
+E a <senha>
+Entao deve exibir a <mensagem> de sucesso
+Exemplos :
+
+| usuario                | senha       | mensagem                       |
+| "joao@ebac.com.br"     | "teste@123" | "Seja bem vindo, Olá João"     |
+| "Gabriel@ebac.com.br"  | "teste@123" | "Seja bem vindo, Olá Gabriel"  |
+| "Fernando@ebac.com.br" | "teste@123" | "Seja bem vindo, Olá Fernando" |
+| "Caio@ebac.com.br"     | "teste@123" | "Seja bem vindo, Olá Caio"     |
